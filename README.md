@@ -13,6 +13,16 @@ O projeto é um estudo prático de como consumir e processar dados de Web APIs d
 ### Funcionalidade Atual
 
 * **Cálculo de Rotas**: Utiliza a Web API do Open Route Service para determinar a **duração** e a **distância** entre dois ou mais pontos.
+* **Visualização de Rotas**: Gera mapas em PNG para visualizar as rotas calculadas.
+* **Geração de Relatórios**: Cria um documento em PDF com todas as informações de distância, duração e os mapas das rotas.
+
+---
+
+### Exemplo de Resultado
+
+Abaixo está um exemplo de um dos mapas gerados, mostrando a rota de Niterói para Paraty de carro.
+
+![Exemplo de rota de Niterói para Paraty de carro](outputs/figures/mapa_driving-car_Paraty.png)
 
 ---
 
@@ -29,18 +39,18 @@ Para obter sua chave, visite [https://account.heigit.org/login](https://account.
 Antes do primeiro commit, siga estes passos para garantir a segurança da sua chave de API:
 
 1.  Crie um arquivo chamado **`.env`** na raiz do seu projeto. Dentro dele, adicione a sua chave da API.
-    
-    ```
-    # Exemplo de conteúdo do arquivo .env
-    ors_api_key = 'SUA CHAVE AQUI'
-    ```
+    
+    ```
+    # Exemplo de conteúdo do arquivo .env
+    ors_api_key = 'SUA CHAVE AQUI'
+    ```
 
 2.  Crie um arquivo chamado **`.gitignore`** também na raiz do seu projeto. Adicione a linha abaixo para instruir o Git a ignorar seu arquivo de chaves, impedindo que ele seja enviado para o repositório.
-    
-    ```
-    # Ignora arquivos de variáveis de ambiente
-    .env
-    ```
+    
+    ```
+    # Ignora arquivos de variáveis de ambiente
+    .env
+    ```
 
 **Passo 3: Comece o seu trabalho**
 
@@ -48,7 +58,7 @@ Abra os arquivos `.ipynb` do projeto em seu ambiente Jupyter e execute as célul
 
 ---
 
-### Próximos Passos (Em Andamento)
+### Próximos Passos (Concluído)
 
-* [ ] Gerar um mapa mostrando os pontos de partida e destino;
-* [ ] Gerar um documento com o mapa e as informações de distância e duração das rotas.
+* [x] Gerar um mapa mostrando os pontos de partida e destino;
+* [x] Gerar um documento com o mapa e as informações de distância e duração das rotas.
