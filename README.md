@@ -81,5 +81,9 @@ Abra os arquivos `.ipynb` do projeto em seu ambiente Jupyter e execute as célul
 
 ### Próximos Passos (Concluído)
 
+* [x] Explorar as funcionalidades da API;
 * [x] Gerar um mapa mostrando os pontos de partida e destino;
-* [x] Gerar um documento com o mapa e as informações de distância e duração das rotas.
+* [x] Gerar um documento com o mapa e as informações de distância e duração das rotas;
+* [ ] Postar informações (Endpoints de Otimização e Matriz);
+* [ ] Obter informações a partir de um Endereço (Geocodificação);
+* [ ] Descobrir o Endereço de um ponto (Geocodificação Reversa).
