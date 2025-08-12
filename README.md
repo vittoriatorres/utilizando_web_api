@@ -26,6 +26,27 @@ Abaixo está um exemplo de um dos mapas gerados, mostrando a rota de Niterói pa
 
 ---
 
+### Análise dos Resultados das Rotas (Comparação, Plausibilidade e Fatores Reais)
+
+* **Comparação de Distâncias e Rotas:**
+    * **Carro:** Geralmente oferece as rotas mais diretas e otimizadas para a rede viária de veículos, resultando nas menores distâncias em termos de percurso por estradas.
+    * **Caminhada:** As distâncias podem ser menores que as de carro para percursos urbanos diretos (como Niterói ao Rio de Janeiro, se a API ignora a ponte e sugere uma travessia "hipotética" ou via barca sem calcular o trajeto real da barca), mas podem ser maiores para destinos mais distantes com caminhos menos otimizados para pedestres ou que exigem desvios por falta de calçadas.
+    * **Bicicleta:** As distâncias ficam frequentemente entre carro e caminhada, pois podem utilizar algumas vias de carro e, idealmente, ciclovias, mas também podem ter restrições em rodovias ou vias de alta velocidade.
+---
+* **Plausibilidade das Durações (Tempo de Movimento Puro vs. Tempo Real):**
+    * **Carro:** As durações para carro são, em geral, **otimistas**. Elas representam um "tempo de movimento puro", calculado com base nas velocidades médias permitidas nas vias, sem considerar o trânsito em tempo real. Em cidades como Rio de Janeiro e Niterói, e na subida da serra para Petrópolis, o congestionamento diário faz com que o tempo real de viagem seja significativamente maior do que o indicado pela API.
+    * **Caminhada e Bicicleta (Longas Distâncias):** As durações para Petrópolis e Paraty nesses perfis são **plausíveis apenas como tempo de movimento contínuo/líquido**. É o tempo que levaria para cobrir a distância sem parar. Na prática, uma viagem de 15 horas (caminhada para Petrópolis) ou 54 horas (caminhada para Paraty) seria inviável para ser feita de forma contínua, exigindo múltiplas paradas para descanso, alimentação e sono ao longo de vários dias. Da mesma forma para bicicleta.
+---
+* **Fatores do Mundo Real Não Considerados pela API:**
+    * **Trânsito e Congestionamentos:** A API não incorpora dados de tráfego em tempo real, que são cruciais para a duração real de viagens de carro em áreas urbanas e rodovias movimentadas.
+    * **Condições da Infraestrutura:** Não considera a qualidade das calçadas para caminhada, a existência e qualidade de ciclovias, trechos perigosos ou inviáveis para pedestres/ciclistas (como a Ponte Rio-Niterói para esses modais sem a barca).
+    * **Barreiras Geográficas e Meios de Travessia:** Para a rota Niterói-Rio de Janeiro a pé ou de bicicleta, a API não "entende" que a travessia da Baía de Guanabara é geralmente feita por barca, e não por uma rota terrestre direta (que seria muito mais longa ou inexistente/insegura para esses modais).
+    * **Paradas e Descanso:** As durações são de movimento ininterrupto. Viagens longas exigem pausas para alimentação, hidratação, descanso, pernoite (para caminhada/bicicleta), e essas paradas aumentam o tempo total da jornada.
+    * **Relevo e Condição Física:** Embora o perfil `cycling-regular` tente considerar o relevo, a intensidade da subida da serra para Petrópolis pode ser subestimada para um ciclista médio, afetando o tempo real. A condição física individual também é um fator não considerado para caminhada e bicicleta.
+    * **Variáveis Climáticas:** Chuva, vento forte ou calor excessivo podem impactar significativamente a velocidade e a duração de viagens a pé ou de bicicleta, e não são considerados pela API de roteamento.
+
+---
+
 ### Como Usar (Notebooks Jupyter)
 
 Para rodar os códigos e explorar o projeto, você precisará de um ambiente que suporte notebooks Jupyter, como o JupyterLab ou VS Code.
