@@ -79,7 +79,7 @@ Abra os arquivos `.ipynb` do projeto em seu ambiente Jupyter e execute as célul
 
 ---
 
-### Próximos Passos (Concluído)
+### Próximos Passos (Em Andamento)
 
 * [x] Explorar as funcionalidades da API;
 * [x] Gerar um mapa mostrando os pontos de partida e destino;
